@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>注册为新用户</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../../res/layui/css/layui.css">
+  <link rel="stylesheet" href="../../res/css/global.css">
+</head>
+<body onload="getStatus()">
+<div class="fly-header layui-bg-green">
+  <div class="layui-container">
+    <a class="fly-logo" href="#">
+      <h2 style="color:white">NCU校园技术论坛</h2>
+    </a>
+  </div>
+</div>
+
+<div class="layui-container fly-marginTop">
+    <div class="fly-panel fly-panel-user" pad20>
+      <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title" style="margin:auto 40% auto 40%">
+          <li><a href="login.html">登入</a></li>
+          <li class="layui-this">注册</a></li>
+        </ul>
+        <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
+          <div class="layui-tab-item layui-show">
+            <div class="layui-form layui-form-pane">
+              <form method="POST" action="/user/regUser" style="margin:auto auto auto 35%;">
+                <div class="layui-form-item" id="thisName">
+                  <label class="layui-form-label layui-bg-green">用户名</label>
+                  <div class="layui-input-inline">
+                    <input type="text" id="U_name" name="U_name" required lay-verify="required" autocomplete="off" class="layui-input"onblur="judge_name()">
+                  </div>
+                </div>
+                <div class="layui-form-item"id="thisEmail">
+                  <label class="layui-form-label layui-bg-green">登录邮箱</label>
+                  <div class="layui-input-inline">
+                    <input type="text" id="U_email" name="U_email" required lay-verify="required" autocomplete="off" class="layui-input"onblur="judge_email()">
+                  </div>
+                </div>
+                <div class="layui-form-item"id="thisPhone">
+                  <label class="layui-form-label layui-bg-green">手机号码</label>
+                  <div class="layui-input-inline">
+                    <input type="text" id="U_phone" name="U_phone" required lay-verify="required" autocomplete="off" class="layui-input"onblur="judge_phone()">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label layui-bg-green">职业</label>
+                  <div class="layui-input-inline">
+                    <input type="text" id="U_job" name="U_job" required lay-verify="required" autocomplete="off" class="layui-input" >
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label layui-bg-green">工作地点</label>
+                  <div class="layui-input-inline">
+                    <input type="text" id="U_jobplace" name="U_jobplace" required lay-verify="required" autocomplete="off" class="layui-input" >
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label layui-bg-green">密码</label>
+                  <div class="layui-input-inline">
+                    <input type="password" id="U_password" name="U_password" required lay-verify="required" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item" id="passwordagain">
+                  <label class="layui-form-label layui-bg-green">确认密码</label>
+                  <div class="layui-input-inline">
+                    <input type="password" id="U_passwordagain" name="U_passwordagain" required lay-verify="required" class="layui-input" onblur="again()">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label for="code_input" class="layui-form-label layui-bg-green">验证码</label>
+                  <div class="layui-input-inline">
+                    <input type="text" id="code_input" name="code_input" required lay-verify="required" placeholder="请输入下方的验证码" autocomplete="off" class="layui-input">
+                  </div>
+                  <!-- <div class="layui-form-mid">
+                    <span style="color: #c00;">{{d.vercode}}</span>
+                  </div> -->
+                </div>
+                <div id="v_container" style="width: 200px;height: 50px;margin: auto auto 15px 100px;"></div>
+                <div class="layui-form-item" style="text-align:left">
+                  <button id="my_button" class="layui-btn layui-bg-blue" lay-submit style="margin: 30px auto auto 100px;">注册为新用户</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="fly-footer">
+  <p>南昌大学计科162班 2018 &copy; 某某小组为完成期末作业出品</p>
+  <p>
+    欢迎联系我们（办公地址：南昌大学前湖校区天健寺）
+  </p>
+  <a href="/user/loginOut" style="text-align: center;">退出</a>
+</div>
+
+<script src="../../js/common/gVerify.js"></script>
+<script src="../../res/layui/layui.js"></script>
+<script src="../../js/user/register.js"></script>
+<script>
+    var verifyCode = new GVerify("v_container");
+    document.getElementById("my_button").onclick = function(){
+        var res = verifyCode.validate(document.getElementById("code_input").value);
+        if(res){
+            return;
+        }else{
+            alert("验证码错误，请重新输入！");
+            document.getElementById("code_input").value="";
+            event.preventDefault();
+        }
+    }
+    function judge_email() {
+        var tishi=document.getElementById("tishi")
+        if(tishi==null){
+            var email=document.getElementById("U_email").value;
+            var at = 0, dot = 0, nat = 0, ndot = 0;
+            for (var i = 0; i < email.length; i++)
+            {
+                if (email.charAt(i) == '@')
+                {
+                    at = i;
+                    nat++;
+                }
+                if (email.charAt(i) == '.')
+                {
+                    dot = i;
+                    ndot++;
+                }
+            }
+            if (email.charAt(0) == '@' || email.charAt(email.length - 1) == '.' || nat > 1 || ndot > 1 ||
+                dot - at <= 1)
+                document.getElementById("thisEmail").innerHTML += "<b style='color: red;' id='tishi'>邮箱格式不合法，请重新输入！</b>"
+            else
+                return;
+        }else {
+            document.getElementById("tishi").remove();
+            var email=document.getElementById("U_email").value;
+            var at = 0, dot = 0, nat = 0, ndot = 0;
+            for (var i = 0; i < email.length; i++)
+            {
+                if (email.charAt(i) == '@')
+                {
+                    at = i;
+                    nat++;
+                }
+                if (email.charAt(i) == '.')
+                {
+                    dot = i;
+                    ndot++;
+                }
+            }
+            if (email.charAt(0) == '@' || email.charAt(email.length - 1) == '.' || nat > 1 || ndot > 1 ||
+                dot - at <= 1)
+                document.getElementById("thisEmail").innerHTML += "<b style='color: red;' id='tishi'>邮箱格式不合法，请重新输入！</b>"
+            else
+                return;
+        }
+    }
+    function judge_name(){
+        var tishi=document.getElementById("tishi");
+        if(tishi==null){
+            var name=document.getElementById("U_name").value;
+            var n=name.length;
+            if(n>10)
+                document.getElementById("thisName").innerHTML += "<b style='color: red;' id='tishi'>命名长度不合规范，请重新输入！</b>"
+            else
+                return;
+        } else {
+            document.getElementById("tishi").remove();
+            var name=document.getElementById("U_name").value;
+            var n=name.length;
+            if(n>10)
+                document.getElementById("thisName").innerHTML += "<b style='color: red;' id='tishi'>命名长度不合规范，请重新输入！</b>"
+            else
+                return;
+        }
+    }
+    function judge_phone(){
+        var tishi=document.getElementById("tishi");
+        if(tishi==null){
+            var phone=document.getElementById("U_phone").value;
+            var n=phone.length;
+            if(n!=11)
+                document.getElementById("thisPhone").innerHTML += "<b style='color: red;' id='tishi'>号码长度不合规范，请重新输入！</b>"
+            else
+                return;
+        } else {
+            document.getElementById("tishi").remove();
+            var phone=document.getElementById("U_phone").value;
+            var n=phone.length;
+            if(n!=11)
+                document.getElementById("thisPhone").innerHTML += "<b style='color: red;' id='tishi'>号码长度不合规范，请重新输入！</b>"
+            else
+                return;
+        }
+    }
+    function again() {
+        var tishi=document.getElementById("tishi");
+        var n=0;
+        if(tishi==null) {
+            var password = document.getElementById("U_password").value;
+             n=password.length;
+            var passwordagain = document.getElementById("U_passwordagain").value;
+            if (password == passwordagain) {
+                //判断字符长度（至少6位，最多16位）
+                if(n>=6&&n<=16) {
+                    return;
+                }
+                else {
+                    document.getElementById("passwordagain").innerHTML += "<b style='color: red;' id='tishi'>密码长度不合规范，请重新输入！</b>"
+                }
+            } else {
+                document.getElementById("U_password").value = "";
+                document.getElementById("U_passwordagain").value = "";
+                document.getElementById("passwordagain").innerHTML += "<b style='color: red;' id='tishi'>前后不一致，请重新输入！</b>"
+            }
+        } else {
+            document.getElementById("tishi").remove();
+            var password = document.getElementById("U_password").value;
+            n=password.length;
+            var passwordagain = document.getElementById("U_passwordagain").value;
+            if (password == passwordagain) {
+                //判断字符长度（至少6位，最多16位）
+                if(n>=6&&n<=16)
+                    return;
+                else {
+                    document.getElementById("passwordagain").innerHTML += "<b style='color: red;' id='tishi'>密码长度不合规范，请重新输入！</b>"
+                }
+            } else {
+                document.getElementById("U_password").value = "";
+                document.getElementById("U_passwordagain").value = "";
+                document.getElementById("passwordagain").innerHTML += "<b style='color: red;' id='tishi'>前后不一致，请重新输入！</b>"
+            }
+        }
+    }
+</script>
+</body>
+</html>

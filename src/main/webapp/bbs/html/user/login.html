@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>论坛登录</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../../res/layui/css/layui.css">
+  <link rel="stylesheet" href="../../res/css/global.css">
+</head>
+<body onload="getStatus()">
+<div class="fly-header layui-bg-green">
+  <div class="layui-container">
+    <a class="fly-logo" href="#">
+      <h2 style="color:white">NCU校园技术论坛</h2>
+    </a>
+  </div>
+</div>
+
+<div class="layui-container fly-marginTop">
+  <div class="fly-panel fly-panel-user" pad20>
+    <div class="layui-tab layui-tab-brief">
+      <ul class="layui-tab-title" style="margin:auto 40% auto 40%">
+        <li class="layui-this">登入</li>
+        <li><a href="register.html">注册</a></li>
+      </ul>
+      <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
+        <div class="layui-tab-item layui-show">
+          <div class="layui-form layui-form-pane">
+            <form method="POST" action="/user/loginUser" style="margin:auto auto auto 35%;">
+              <div class="layui-form-item" id="email">
+                <label for="U_email" class="layui-form-label layui-bg-green">邮箱</label>
+                <div class="layui-input-inline">
+                  <input type="text" id="U_email" name="U_email" required lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item" id ="password">
+                <label for="U_password" class="layui-form-label layui-bg-green">密码</label>
+                <div class="layui-input-inline">
+                  <input type="password" id="U_password" name="U_password" required lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label for="code_input" class="layui-form-label layui-bg-green">验证码</label>
+                <div class="layui-input-inline">
+                  <input type="text" id="code_input" name="code_input" required lay-verify="required" placeholder="请输入下方的验证码" autocomplete="off" class="layui-input">
+                </div>
+                <!-- <div class="layui-form-mid">
+                  <span style="color: #c00;">{{d.vercode}}</span>
+                </div> -->
+              </div>
+              <div id="v_container" style="width: 200px;height: 50px;margin: auto auto 15px 100px;"></div>
+              <div class="layui-form-item" style="text-align:left">
+                <button id="my_button" class="layui-btn layui-bg-blue" lay-submit style="margin: 30px auto auto 100px;">立即登录</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="fly-footer">
+  <p>南昌大学计科162班 2018 &copy; 某某小组为完成期末作业出品</p>
+  <p>
+    欢迎联系我们（办公地址：南昌大学前湖校区天健寺）
+  </p>
+  <a href="/user/loginOut" style="text-align: center;">退出</a>
+</div>
+
+<script src="../../js/common/gVerify.js"></script>
+<script src="../../res/layui/layui.js"></script>
+<script src="../../js/user/login.js"></script>
+<script>
+    var verifyCode = new GVerify("v_container");
+    document.getElementById("my_button").onclick = function(){
+        var res = verifyCode.validate(document.getElementById("code_input").value);
+        if(res){
+            return;
+        }else{
+            alert("验证码错误，请重新输入！");
+            document.getElementById("code_input").value="";
+            event.preventDefault();
+        }
+    }
+</script>
+</body>
+</html>
