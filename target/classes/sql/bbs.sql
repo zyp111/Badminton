@@ -1,3 +1,31 @@
+#网站新闻
+CREATE TABLE IF NOT EXISTS news1(
+  news1_id INT(10) NOT NULL AUTO_INCREMENT COMMENT '新闻ID',
+  news1_title VARCHAR(30) NOT NULL COMMENT '新闻标题',
+  news1_content TEXT NOT NULL COMMENT '新闻内容',
+  news1_create_time DATETIME NOT NULL COMMENT '新闻发布时间',
+  news1_img VARCHAR(30) NOT NULL COMMENT '新闻图片',
+  PRIMARY KEY  (`news1_id`)
+) ENGINE=InnoDB DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
+
+#羽毛球产品
+CREATE TABLE IF NOT EXISTS product(
+  product_id INT(10) NOT NULL AUTO_INCREMENT COMMENT '产品ID',
+  product_name VARCHAR(30) NOT NULL COMMENT '产品名称',
+  product_introduce TEXT NOT NULL COMMENT '产品介绍',
+  product_img VARCHAR(30) NOT NULL COMMENT '产品图片',
+  PRIMARY KEY  (`product_id`)
+) ENGINE=InnoDB DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
+
+#羽毛球品牌
+CREATE TABLE IF NOT EXISTS brand(
+  brand_id INT(10) NOT NULL AUTO_INCREMENT COMMENT '品牌ID',
+  brand_name VARCHAR(30) NOT NULL COMMENT '品牌名称',
+  brand_introduce TEXT NOT NULL COMMENT '品牌介绍',
+  brand_img VARCHAR(30) NOT NULL COMMENT '品牌图片',
+  PRIMARY KEY  (`brand_id`)
+) ENGINE=InnoDB DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
+
 # 用户信息表
 CREATE TABLE IF NOT EXISTS user(
     user_id INT(10) NOT NULL AUTO_INCREMENT COMMENT '用户id',

@@ -13,6 +13,7 @@
 
     <!-- 自动扫描该包，注册为Spring的controller -->
     <context:component-scan base-package="com.badminton.bbs.controller"/>
+    <context:component-scan base-package="com.badminton.controller"/>
     <!-- 设置默认配置方案 -->
     <mvc:annotation-driven/>
     <!-- 使用默认的Servlet来响应静态文件 -->

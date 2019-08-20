@@ -16,6 +16,7 @@
 
     <!--mybatis:scan自动扫描包里的所有接口当作Spring的bean配置，之后可以进行依赖注入-->
     <mybatis:scan base-package="com.badminton.bbs.dao"/>
+    <mybatis:scan base-package="com.badminton.dao"/>
 
     <!--扫描包下面java文件，有Spring相关注解的类，注册为Spring的bean-->
     <context:component-scan base-package="com.badminton"/>
