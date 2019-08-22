@@ -60,7 +60,7 @@ public class NewsComtroller {
 
     @RequestMapping(value = "/selectAllNews",method = RequestMethod.GET, produces= "application/json;charset=UTF-8")
     @ResponseBody
-    public String selectAllPostByUserName(HttpServletRequest request, HttpServletResponse response)
+    public String selectAllNews(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
         List<News> newses=newsService.selectAllNews();
         ObjectMapper mapper=new ObjectMapper();
