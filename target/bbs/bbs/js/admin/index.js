@@ -91,15 +91,15 @@ function showPost() {
                     var post_reply_count = obj[i].post_reply_count;
                     if(obj[i].post_status_top==1) {
                         listtop+=`<li>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
                 <img src="../res/images/userheadimage/` + head_img + `">
               </a>
               <h2>
                 <a class="layui-badge">` + board + `</a>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
               </h2>
               <div class="fly-list-info">
-                <a href="/html/adminDetail.html?post_id=` + post_id + `" link>
+                <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" link>
                 <cite>` + post_user_name + `</cite>
                   <!--<i class="iconfont icon-renzheng" title="认证信息：XXX"></i>-->
                   <!--<i class="layui-badge fly-badge-vip">VIP+</i>-->
@@ -120,15 +120,15 @@ function showPost() {
             </li>`;
                     }
                     listpost += `<li>
-            <a href="/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
+            <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
               <img src="../res/images/userheadimage/` + head_img + `">
             </a>
             <h2>
               <a class="layui-badge">` + board + `</a>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
             </h2>
             <div class="fly-list-info">
-              <a href="/html/adminDetail.html?post_id=` + post_id + `" link>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" link>
                 <cite>` + post_user_name + `</cite>
                 <!--
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
@@ -161,15 +161,15 @@ function showPost() {
                     var post_reply_count = obj[i].post_reply_count;
                     if(classId==1) {
                         listpost += `<li>
-            <a href="/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
+            <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
               <img src="../res/images/userheadimage/` + head_img + `">
             </a>
             <h2>
               <a class="layui-badge">` + board + `</a>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
             </h2>
             <div class="fly-list-info">
-              <a href="/html/adminDetail.html?post_id=` + post_id + `" link>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" link>
                 <cite>` + post_user_name + `</cite>
                 <!--
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
@@ -203,15 +203,15 @@ function showPost() {
                     var post_reply_count = obj[i].post_reply_count;
                     if(classId==2) {
                         listpost += `<li>
-            <a href="/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
+            <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
               <img src="../res/images/userheadimage/` + head_img + `">
             </a>
             <h2>
               <a class="layui-badge">` + board + `</a>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
             </h2>
             <div class="fly-list-info">
-              <a href="/html/adminDetail.html?post_id=` + post_id + `" link>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" link>
                 <cite>` + post_user_name + `</cite>
                 <!--
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
@@ -245,15 +245,15 @@ function showPost() {
                     var post_reply_count = obj[i].post_reply_count;
                     if(classId==3) {
                         listpost += `<li>
-            <a href="/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
+            <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
               <img src="../res/images/userheadimage/` + head_img + `">
             </a>
             <h2>
               <a class="layui-badge">` + board + `</a>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
             </h2>
             <div class="fly-list-info">
-              <a href="/html/adminDetail.html?post_id=` + post_id + `" link>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" link>
                 <cite>` + post_user_name + `</cite>
                 <!--
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
@@ -287,15 +287,15 @@ function showPost() {
                     var post_reply_count = obj[i].post_reply_count;
                     if(classId==4) {
                         listpost += `<li>
-            <a href="/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
+            <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
               <img src="../res/images/userheadimage/` + head_img + `">
             </a>
             <h2>
               <a class="layui-badge">` + board + `</a>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
             </h2>
             <div class="fly-list-info">
-              <a href="/html/adminDetail.html?post_id=` + post_id + `" link>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" link>
                 <cite>` + post_user_name + `</cite>
                 <!--
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
@@ -329,15 +329,15 @@ function showPost() {
                     var post_reply_count = obj[i].post_reply_count;
                     if(classId==5) {
                         listpost += `<li>
-            <a href="/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
+            <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
               <img src="../res/images/userheadimage/` + head_img + `">
             </a>
             <h2>
               <a class="layui-badge">` + board + `</a>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
             </h2>
             <div class="fly-list-info">
-              <a href="/html/adminDetail.html?post_id=` + post_id + `" link>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" link>
                 <cite>` + post_user_name + `</cite>
                 <!--
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
@@ -396,15 +396,15 @@ function showJIa(chose) {
                         var time = getMyDate(post_update_time);
                         var post_reply_count = obj[i].post_reply_count;
                         listpost += `<li>
-            <a href="/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
+            <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
               <img src="../res/images/userheadimage/` + head_img + `">
             </a>
             <h2>
               <a class="layui-badge">` + board + `</a>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
             </h2>
             <div class="fly-list-info">
-              <a href="/html/adminDetail.html?post_id=` + post_id + `" link>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" link>
                 <cite>` + post_user_name + `</cite>
                 <!--
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
@@ -437,15 +437,15 @@ function showJIa(chose) {
                         var post_reply_count = obj[i].post_reply_count;
                         if (classId == 1) {
                             listpost += `<li>
-            <a href="/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
+            <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
               <img src="../res/images/userheadimage/` + head_img + `">
             </a>
             <h2>
               <a class="layui-badge">` + board + `</a>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
             </h2>
             <div class="fly-list-info">
-              <a href="/html/adminDetail.html?post_id=` + post_id + `" link>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" link>
                 <cite>` + post_user_name + `</cite>
                 <!--
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
@@ -479,15 +479,15 @@ function showJIa(chose) {
                         var post_reply_count = obj[i].post_reply_count;
                         if (classId == 2) {
                             listpost += `<li>
-            <a href="/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
+            <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
               <img src="../res/images/userheadimage/` + head_img + `">
             </a>
             <h2>
               <a class="layui-badge">` + board + `</a>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
             </h2>
             <div class="fly-list-info">
-              <a href="/html/adminDetail.html?post_id=` + post_id + `" link>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" link>
                 <cite>` + post_user_name + `</cite>
                 <!--
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
@@ -521,15 +521,15 @@ function showJIa(chose) {
                         var post_reply_count = obj[i].post_reply_count;
                         if (classId == 3) {
                             listpost += `<li>
-            <a href="/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
+            <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
               <img src="../res/images/userheadimage/` + head_img + `">
             </a>
             <h2>
               <a class="layui-badge">` + board + `</a>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
             </h2>
             <div class="fly-list-info">
-              <a href="/html/adminDetail.html?post_id=` + post_id + `" link>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" link>
                 <cite>` + post_user_name + `</cite>
                 <!--
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
@@ -563,15 +563,15 @@ function showJIa(chose) {
                         var post_reply_count = obj[i].post_reply_count;
                         if (classId == 4) {
                             listpost += `<li>
-            <a href="/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
+            <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
               <img src="../res/images/userheadimage/` + head_img + `">
             </a>
             <h2>
               <a class="layui-badge">` + board + `</a>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
             </h2>
             <div class="fly-list-info">
-              <a href="/html/adminDetail.html?post_id=` + post_id + `" link>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" link>
                 <cite>` + post_user_name + `</cite>
                 <!--
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
@@ -605,15 +605,15 @@ function showJIa(chose) {
                         var post_reply_count = obj[i].post_reply_count;
                         if (classId == 5) {
                             listpost += `<li>
-            <a href="/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
+            <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
               <img src="../res/images/userheadimage/` + head_img + `">
             </a>
             <h2>
               <a class="layui-badge">` + board + `</a>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
             </h2>
             <div class="fly-list-info">
-              <a href="/html/adminDetail.html?post_id=` + post_id + `" link>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" link>
                 <cite>` + post_user_name + `</cite>
                 <!--
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
@@ -661,15 +661,15 @@ function showJIa(chose) {
                             var time = getMyDate(post_update_time);
                             var post_reply_count = obj[i].post_reply_count;
                             listpost += `<li>
-            <a href="/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
+            <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
               <img src="../res/images/userheadimage/` + head_img + `">
             </a>
             <h2>
               <a class="layui-badge">` + board + `</a>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
             </h2>
             <div class="fly-list-info">
-              <a href="/html/adminDetail.html?post_id=` + post_id + `" link>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" link>
                 <cite>` + post_user_name + `</cite>
                 <!--
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
@@ -702,15 +702,15 @@ function showJIa(chose) {
                         var post_reply_count = obj[i].post_reply_count;
                         if (classId == 1) {
                             listpost += `<li>
-            <a href="/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
+            <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
               <img src="../res/images/userheadimage/` + head_img + `">
             </a>
             <h2>
               <a class="layui-badge">` + board + `</a>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
             </h2>
             <div class="fly-list-info">
-              <a href="/html/adminDetail.html?post_id=` + post_id + `" link>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" link>
                 <cite>` + post_user_name + `</cite>
                 <!--
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
@@ -744,15 +744,15 @@ function showJIa(chose) {
                         var post_reply_count = obj[i].post_reply_count;
                         if (classId == 2) {
                             listpost += `<li>
-            <a href="/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
+            <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
               <img src="../res/images/userheadimage/` + head_img + `">
             </a>
             <h2>
               <a class="layui-badge">` + board + `</a>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
             </h2>
             <div class="fly-list-info">
-              <a href="/html/adminDetail.html?post_id=` + post_id + `" link>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" link>
                 <cite>` + post_user_name + `</cite>
                 <!--
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
@@ -786,15 +786,15 @@ function showJIa(chose) {
                         var post_reply_count = obj[i].post_reply_count;
                         if (classId == 3) {
                             listpost += `<li>
-            <a href="/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
+            <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
               <img src="../res/images/userheadimage/` + head_img + `">
             </a>
             <h2>
               <a class="layui-badge">` + board + `</a>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
             </h2>
             <div class="fly-list-info">
-              <a href="/html/adminDetail.html?post_id=` + post_id + `" link>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" link>
                 <cite>` + post_user_name + `</cite>
                 <!--
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
@@ -828,15 +828,15 @@ function showJIa(chose) {
                         var post_reply_count = obj[i].post_reply_count;
                         if (classId == 4) {
                             listpost += `<li>
-            <a href="/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
+            <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
               <img src="../res/images/userheadimage/` + head_img + `">
             </a>
             <h2>
               <a class="layui-badge">` + board + `</a>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
             </h2>
             <div class="fly-list-info">
-              <a href="/html/adminDetail.html?post_id=` + post_id + `" link>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" link>
                 <cite>` + post_user_name + `</cite>
                 <!--
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
@@ -870,15 +870,15 @@ function showJIa(chose) {
                         var post_reply_count = obj[i].post_reply_count;
                         if (classId == 5) {
                             listpost += `<li>
-            <a href="/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
+            <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" class="fly-avatar">
               <img src="../res/images/userheadimage/` + head_img + `">
             </a>
             <h2>
               <a class="layui-badge">` + board + `</a>
-              <a href="/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `">` + post_title + `</a>
             </h2>
             <div class="fly-list-info">
-              <a href="/html/adminDetail.html?post_id=` + post_id + `" link>
+              <a href="/bbs/html/adminDetail.html?post_id=` + post_id + `" link>
                 <cite>` + post_user_name + `</cite>
                 <!--
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>

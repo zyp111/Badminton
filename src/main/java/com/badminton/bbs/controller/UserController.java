@@ -30,7 +30,7 @@ public class UserController {
     public void loginOut(HttpServletRequest request,HttpServletResponse response) throws IOException {
         HttpSession session=request.getSession();
         session.removeAttribute("user");
-        response.sendRedirect("/html/index.html");
+        response.sendRedirect("/bbs/html/index.html");
     }
     @RequestMapping(value = "/loginUser",method = RequestMethod.POST, produces= "application/json;charset=UTF-8")
     @ResponseBody
@@ -42,19 +42,19 @@ public class UserController {
         String res=mapper.writeValueAsString(user);
         System.out.print(res);
         if(user == null) {
-            response.sendRedirect("/html/user/login.html?status=1");
+            response.sendRedirect("/bbs/html/user/login.html?status=1");
         } else {
             if(password.equals(user.getPassword())) {
                 HttpSession session = request.getSession();
                 session.setAttribute("user",user);
                 int userType=user.getUser_type();
                 if(userType==0) {
-                    response.sendRedirect("/html/adminIndex.html");
+                    response.sendRedirect("/bbs/html/adminIndex.html");
                 } else {
-                    response.sendRedirect("/html/index.html");
+                    response.sendRedirect("/bbs/html/index.html");
                 }
             } else {
-                response.sendRedirect("/html/user/login.html?status=2");
+                response.sendRedirect("/bbs/html/user/login.html?status=2");
             }
         }
     }
@@ -95,16 +95,16 @@ public class UserController {
             int i=(int) (Math.random() * 12 + 1);
             user.setHead_img(i+".jpg");
             userService.insertUser(user);
-            response.sendRedirect("/html/user/turn.html");
+            response.sendRedirect("/bbs/html/user/turn.html");
         }else if(user_E==null&&user_N!=null){
             //提示用户名已经存在，先返回注册页面，传一个参数过去作为标记
-            response.sendRedirect("/html/user/register.html?Exist=1");
+            response.sendRedirect("/bbs/html/user/register.html?Exist=1");
         }else if(user_E!=null&&user_N==null){
             //提示邮箱已经存在，先返回注册页面，传一个参数过去作为标记
-            response.sendRedirect("/html/user/register.html?Exist=2");
+            response.sendRedirect("/bbs/html/user/register.html?Exist=2");
         }else if(user_E!=null&&user_N!=null){
             //提示邮箱和用户名都已经存在，先返回注册页面，传一个参数过去作为标记
-            response.sendRedirect("/html/user/register.html?Exist=3");
+            response.sendRedirect("/bbs/html/user/register.html?Exist=3");
         }
 
 

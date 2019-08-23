@@ -60,7 +60,7 @@ public class ReplyController {
         User user=(User)session.getAttribute("user");
         int reply_post_id=Integer.parseInt(request.getParameter("reply_post_id"));
         if(user==null) {
-            response.sendRedirect("/html/detail.html?post_id="+reply_post_id+"&status=1");
+            response.sendRedirect("/bbs/html/detail.html?post_id="+reply_post_id+"&status=1");
             return;
         }
         String reply_user_name=user.getUser_name();
@@ -89,9 +89,9 @@ public class ReplyController {
         //前往数据库更改post表的回帖数和更新时间直接调用postService
         postService.updatePost_reply_count(reply_post_id,reply_create_time);
         if(user.getUser_type()==0) {
-            response.sendRedirect("/html/adminDetail.html?post_id="+reply_post_id);
+            response.sendRedirect("/bbs/html/adminDetail.html?post_id="+reply_post_id);
         } else {
-            response.sendRedirect("/html/detail.html?post_id=" + reply_post_id);
+            response.sendRedirect("/bbs/html/detail.html?post_id=" + reply_post_id);
         }
     }
 
@@ -107,9 +107,9 @@ public class ReplyController {
         HttpSession session=request.getSession();
         User user=(User)session.getAttribute("user");
         if(user.getUser_type()==0) {
-            response.sendRedirect("/html/adminDetail.html?post_id="+post_id);
+            response.sendRedirect("/bbs/html/adminDetail.html?post_id="+post_id);
         } else {
-            response.sendRedirect("/html/detail.html?post_id="+post_id);
+            response.sendRedirect("/bbs/html/detail.html?post_id="+post_id);
         }
     }
 

@@ -67,7 +67,7 @@ public class PostController {
         HttpSession session=request.getSession();
         User user = (User)session.getAttribute("user");
         if(user==null) {
-            response.sendRedirect("/html/user/add.html?status=1");
+            response.sendRedirect("/bbs/html/user/add.html?status=1");
             return;
         }
         String head_img=user.getHead_img();
@@ -101,7 +101,7 @@ public class PostController {
         post.setPost_create_time(date_create);
         post.setHead_img(head_img);
         postService.insertPost(post);
-        response.sendRedirect("/html/user/turn1.html");
+        response.sendRedirect("/bbs/html/user/turn1.html");
     }
 
 
@@ -119,7 +119,7 @@ public class PostController {
             status=0;
         }
         postService.updatePost_status_top(id,status);
-        response.sendRedirect("/html/adminDetail.html?post_id="+post_id);
+        response.sendRedirect("/bbs/html/adminDetail.html?post_id="+post_id);
     }
 
 
@@ -136,7 +136,7 @@ public class PostController {
             status=0;
         }
         postService.updatePost_status_jia(id,status);
-        response.sendRedirect("/html/adminDetail.html?post_id="+post_id);
+        response.sendRedirect("/bbs/html/adminDetail.html?post_id="+post_id);
     }
 
     /*******更改帖子内容  NO--不可改，YES--可改**************/
@@ -166,10 +166,10 @@ public class PostController {
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("user");
         if(user.getUser_type()==0) {
-            response.sendRedirect("/html/adminDetail.html?post_id="+post_id);
+            response.sendRedirect("/bbs/html/adminDetail.html?post_id="+post_id);
             return;
         } else {
-            response.sendRedirect("/html/detail.html?post_id="+post_id);
+            response.sendRedirect("/bbs/html/detail.html?post_id="+post_id);
             return;
         }
 
@@ -186,9 +186,9 @@ public class PostController {
         HttpSession session=request.getSession();
         User user = (User)session.getAttribute("user");
         if(user.getUser_type()==0) {
-            response.sendRedirect("/html/adminIndex.html");
+            response.sendRedirect("/bbs/html/adminIndex.html");
         } else {
-            response.sendRedirect("/html/index.html");
+            response.sendRedirect("/bbs/html/index.html");
         }
     }
     //删掉该用户所有帖子

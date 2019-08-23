@@ -10,7 +10,7 @@ function getStatus() {
         return;
     } else if(status==1) {
         alert("请求接口错误！请先完成登录后再发帖，即将返回主页面...");
-        window.location.href="/html/index.html";
+        window.location.href="/bbs/html/index.html";
     }
 }
 function edit() {

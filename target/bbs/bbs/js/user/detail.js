@@ -121,7 +121,7 @@ function showPost2() {
                   </div>
                   <div class="detail-hits" id="LAY_jieAdmin" data-id="123">
                   <span style="padding-right: 10px; color: #FF7200">最近更新时间` + time2 + `</span> 
-                  <span class="layui-btn layui-btn-xs jie-admin" type="edit"><a href="/html/user/add.html?post_id=`+post_id+`">编辑此贴</a></span> 
+                  <span class="layui-btn layui-btn-xs jie-admin" type="edit"><a href="/bbs/html/user/add.html?post_id=`+post_id+`">编辑此贴</a></span> 
                   </div>
                 </div>
                 <div class="detail-body photos">
