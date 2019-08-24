@@ -23,7 +23,7 @@ public class ProductController {
     @Qualifier("ProductService")
     private ProductService productService;
 
-    @RequestMapping(value = "/insertProduct", method = RequestMethod.GET,produces= "application/json;charset=UTF-8")
+    @RequestMapping(value = "/insertProduct", method = RequestMethod.POST,produces= "application/json;charset=UTF-8")
     @ResponseBody
     public void insertNews(HttpServletRequest request,
                            HttpServletResponse response) throws IOException {
@@ -46,7 +46,7 @@ public class ProductController {
 //        response.sendRedirect("/html/user/turn1.html");
     }
 
-    @RequestMapping(value = "/deleteProduct",method = RequestMethod.GET, produces= "application/json;charset=UTF-8")
+    @RequestMapping(value = "/deleteProduct",method = RequestMethod.POST, produces= "application/json;charset=UTF-8")
     @ResponseBody
     public void deleteProduct(HttpServletRequest request,HttpServletResponse response) throws IOException {
 //        String product_id = request.getParameter("product_id");
@@ -55,7 +55,7 @@ public class ProductController {
         productService.deleteProduct(id);
     }
 
-    @RequestMapping(value = "/selectAllProduct",method = RequestMethod.GET, produces= "application/json;charset=UTF-8")
+    @RequestMapping(value = "/selectAllProduct",method = RequestMethod.POST, produces= "application/json;charset=UTF-8")
     @ResponseBody
     public String selectAllProduct(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {

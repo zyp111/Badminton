@@ -21,4 +21,7 @@ public interface NewsDao {
 
     @Select("select * from news1")
     List<News> selectAllNews();
+
+    @Select("select * from news1 where news1_id = #{id}")
+    News selectNewsById(int id);
 }

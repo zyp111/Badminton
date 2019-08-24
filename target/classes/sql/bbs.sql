@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS news1(
   news1_title VARCHAR(30) NOT NULL COMMENT '新闻标题',
   news1_content TEXT NOT NULL COMMENT '新闻内容',
   news1_create_time DATETIME NOT NULL COMMENT '新闻发布时间',
-  news1_img VARCHAR(30) NOT NULL COMMENT '新闻图片',
+  news1_img VARCHAR(255) NOT NULL COMMENT '新闻图片',
   PRIMARY KEY  (`news1_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
 

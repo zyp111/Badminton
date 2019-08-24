@@ -11,4 +11,6 @@ public interface NewsService {
     void deleteNews(int id);
 
     List<News> selectAllNews();
+
+    News selectNewsById(int id);
 }

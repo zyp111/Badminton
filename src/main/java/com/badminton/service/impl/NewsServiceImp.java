@@ -32,4 +32,9 @@ public class NewsServiceImp implements NewsService {
     public List<News> selectAllNews() {
         return newsDao.selectAllNews();
     }
+
+    @Override
+    public News selectNewsById(int id) {
+        return newsDao.selectNewsById(id);
+    }
 }

@@ -24,7 +24,7 @@ public class BrandController {
     @Qualifier("BrandService")
     private BrandService brandService;
 
-    @RequestMapping(value = "/insertBrand", method = RequestMethod.GET,produces= "application/json;charset=UTF-8")
+    @RequestMapping(value = "/insertBrand", method = RequestMethod.POST,produces= "application/json;charset=UTF-8")
     @ResponseBody
     public void insertNews(HttpServletRequest request,
                            HttpServletResponse response) throws IOException {
@@ -48,7 +48,7 @@ public class BrandController {
 //        response.sendRedirect("/html/user/turn1.html");
     }
 
-    @RequestMapping(value = "/deleteBrand",method = RequestMethod.GET, produces= "application/json;charset=UTF-8")
+    @RequestMapping(value = "/deleteBrand",method = RequestMethod.POST, produces= "application/json;charset=UTF-8")
     @ResponseBody
     public void deleteBrand(HttpServletRequest request,HttpServletResponse response) throws IOException {
 //        String brand_id = request.getParameter("brand_id");
@@ -57,7 +57,7 @@ public class BrandController {
         brandService.deleteBrand(id);
     }
 
-    @RequestMapping(value = "/selectAllBrand",method = RequestMethod.GET, produces= "application/json;charset=UTF-8")
+    @RequestMapping(value = "/selectAllBrand",method = RequestMethod.POST, produces= "application/json;charset=UTF-8")
     @ResponseBody
     public String selectAllBrand(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {

@@ -35,9 +35,11 @@ public class NewsComtroller {
 //        String img = request.getParameter("imgLink");
 
         String news_title = "新闻测试";
-        String news_content = "测试内容";
+        String news_content = "吉隆坡15日消息，参加世锦赛的大马球员，已在教练总监黄综翰的带领下，出发前往瑞士巴塞尔。黄综翰表示，即使李梓嘉还没有能力冲击奖牌，但他希望小李至少都能杀进8强。"+
+                "在李宗伟退役之前，大马男单总是夺冠热门之一。如今虽没有了“老李”，但小李（李梓嘉）最近进步很明显，黄综翰对他充满了期待。"+
+                "黄综翰说：“目前，虽然李梓嘉还没有足够的能力去冲击奖牌，但我希望小李至少能杀进8强，以便获得向日本的世界第一兼卫冕冠军桃田贤斗讨教的机会。”";
         Date date_create=new Date();
-        String img = "图片";
+        String img = "../res/static/img/news_img1.jpg";
 
         News news = new News();
         news.setNews1_title(news_title);
@@ -49,7 +51,7 @@ public class NewsComtroller {
 //        response.sendRedirect("/html/user/turn1.html");
     }
 
-    @RequestMapping(value = "/deleteNews",method = RequestMethod.GET, produces= "application/json;charset=UTF-8")
+    @RequestMapping(value = "/deleteNews",method = RequestMethod.POST, produces= "application/json;charset=UTF-8")
     @ResponseBody
     public void deleteANews(HttpServletRequest request,HttpServletResponse response) throws IOException {
 //        String news_id = request.getParameter("post_id");
@@ -58,7 +60,7 @@ public class NewsComtroller {
         newsService.deleteNews(id);
     }
 
-    @RequestMapping(value = "/selectAllNews",method = RequestMethod.GET, produces= "application/json;charset=UTF-8")
+    @RequestMapping(value = "/selectAllNews",method = RequestMethod.POST, produces= "application/json;charset=UTF-8")
     @ResponseBody
     public String selectAllNews(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
@@ -66,6 +68,18 @@ public class NewsComtroller {
         ObjectMapper mapper=new ObjectMapper();
         String newsJson=mapper.writeValueAsString(newses);
         System.out.println(newsJson);
+        return newsJson;
+    }
+
+    @RequestMapping(value = "/selectNewsById",method = RequestMethod.POST, produces= "application/json;charset=UTF-8")
+    @ResponseBody
+    public String selectNewsById(HttpServletRequest request, HttpServletResponse response)
+        throws IOException, ServletException {
+        String news_id = request.getParameter("newsId");
+        int id = Integer.parseInt(news_id);
+        News news = newsService.selectNewsById(id);
+        ObjectMapper mapper = new ObjectMapper();
+        String newsJson = mapper.writeValueAsString(news);
         return newsJson;
     }
 }
